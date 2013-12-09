@@ -26,7 +26,7 @@
 	<UIBlock class="actions">
 		<UIButton id="Filter" source="[APP]resources/styles/images/BotonGrisTick.png" title="Filtrar"  width="90" height="36"/>    
 	</UIBlock>
-	<UIGrid id="GridSecondLevel" title=" " pagination="local" pageSize="10" gridtype="GridSecondLevel">
+	<UIGrid id="GridSecondLevel" pagination="local" pageSize="10" gridtype="GridSecondLevel">
 		<UIColumns>
 			<UIText id="Operations" title="Operacion" 			visible="true"  position="1"  domain="Character,60"/>
 			<UIText id="Prod" 		title="Tipo" 			visible="true"  position="2"  domain="Character,65"/>
