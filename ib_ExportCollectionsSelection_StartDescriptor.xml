@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<UIForm id="ExportCollectionsSelection" title="Selection de Cobranzas de Exportacion" toFileInputds="Filters,CboAccounts,CboCurrency,GridSecondLevel" toPDF="true" toPrinter="false" toSAP="" toText="false" toExcel="true" toXML="" inputsds="" outputsds="" steps="" hasErrorViewer="false" hasDisclaimer="false" preloaded="false" iblevel="3" ibproject="SCOPe" ibprocess="ExportCollectionsSelection" ibtask="Start" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="DescriptorSchema.xsd">
+	<UIFieldGroup id="Filters" title="">
+		<UIBlock class="row">
+			<UIComboBox id="CboAccounts" title="Cuenta"  domain="Numeric,10" />
+		</UIBlock>
+		<UIText id="FromAux" title="From" visible="false" domain="Character,50"/>
+		<UIBlock class="row">
+			<UIText id="SinceOperations" title="Desde Operacion"  domain="Numeric,9"/>
+			<UIText id="ToOperations" title="Hasta"  domain="Numeric,9"/>
+		</UIBlock>
+		<UIBlock class="row">
+			<UIDate id="SinceDate" title="Desde Fecha"  domain="Date"/>
+			<UIDate id="ToDate" title="Hasta"  domain="Date"/>
+		</UIBlock>
+		<UIBlock class="row">
+			<UIText id="SinceAmount" title="Desde Importe"  domain="Numeric,18,2"/>
+			<UIText id="ToAmount" title="Hasta"  domain="Numeric,18,2"/>
+		</UIBlock>
+		<UIBlock class="row">
+			<UIComboBox id="CboCurrency" title="Moneda"  domain="Numeric,9"/>
+		</UIBlock>
+		<UIText id="F11" title="F11" visible="false" domain="Character,50"/>
+		<UIText id="Cuentas" title="Cuentas" visible="false" domain="Character,50"/>
+	</UIFieldGroup>
+	<UIBlock class="actions">
+		<UIButton id="Filter" source="[APP]resources/styles/images/BotonGrisTick.png" title="Filtrar"  width="90" height="36"/>    
+	</UIBlock>
+	<UIGrid id="GridSecondLevel" title=" " pagination="local" pageSize="10" gridtype="GridSecondLevel">
+		<UIColumns>
+			<UIText id="Operations" title="Operacion" 			visible="true"  position="1"  domain="Character,60"/>
+			<UIText id="Prod" 		title="Tipo" 			visible="true"  position="2"  domain="Character,65"/>
+			<UIText id="TypCnt" 	title="Cuenta" 			align="right"	visible="true"  position="3"  domain="Character,30"/>
+			<UIText id="CtaNom" 	title="Girado" 				visible="true"  position="4"  domain="Character,65"/>
+			<UIText id="PrvNom" 	title="Moneda" 				visible="true"  position="5"  domain="Character,30" />
+			<UIText id="DocNum" 	title="Nro Documento" 		visible="false" position="6"  domain="Numeric,9"/>
+			<UIText id="ValDep" 	title="Importe" 			visible="true"  position="7"  domain="Numeric,18,2"/>
+			<UIText id="DepPen" 	title="Saldo" 				visible="true"  position="8"  domain="Numeric,18,2"/>
+			<UIText id="FchValor" 	title="Fecha Ing." 			visible="true"  position="9"  domain="Date"/>
+			<UIText id="FchVto" 	title="Fecha Vto." 		visible="true"  position="10" domain="Date"/>
+			<UIText id="FchVtoDoc" 	title="Fch. Acep." 		visible="true" position="11" domain="Date"/>
+			<UIText id="Tasa" 		title="Tasa" 				visible="false" position="12" domain="Numeric,11,6"/>
+			<UIText id="TMora" 		title="Tasa de Mora" 		visible="false" position="13" domain="Numeric,11,6"/>
+			<UIText id="IntrVto" 	title="Interes Vto." 		visible="false" position="14" domain="Numeric,18,2"/>
+			<UICheckBox id="MonBase" 	title="Aut." 				visible="true" position="15" domain="Character,30" align="center" width="60" height="36"/>			  
+			<UIText id="TotAcum" 	title="Total Acum." 		visible="false" position="16" domain="Numeric,18,2" align="right"/>
+			<UIText id="Capital" 	title="Capital" 			visible="false" position="17" domain="Numeric,18,2" align="right" />
+			<UIText id="Instr" 		title="F11" 				visible="false" position="18" domain="Character,65"/>
+			<UICheckBox id="CodCCI" 	title="Letra" 			visible="true" position="19" domain="Character,20" align="center" width="60"/>
+			<UIText id="ProdPapel" 	title="Standby" 			visible="false" position="20" domain="Character,30"/>
+			<UIText id="ISIN" 		title="ISIN" 				visible="false" position="21" domain="Character,12"/>
+			<UIText id="ValNom" 	title="Valor Nominal" 		visible="false" position="22" domain="Numeric,18,2"/>
+			<UIText id="Saldo" 		title="Saldo de Capital" 	visible="false" position="23" domain="Numeric,18,2" align="right"/>			  
+			<UIText id="Precio" 	title="Precio" 				visible="false" position="24" domain="Numeric,15,8"/>
+			<UIText id="VencPapel" 	title="Venc Papel" 			visible="false" position="25" domain="Character,8"/>
+			<UIText id="VencCupon" 	title="Venc Cupon" 			visible="false" position="26" domain="Character,8"/>
+			<UIText id="TasaPapel" 	title="Tasa Papel" 			visible="false" position="27" domain="Numeric,11,6"/>
+			<UIText id="SaldoPapel" title="Saldo Papel" 		visible="false" position="28" domain="Numeric,18,2"/>
+			<UIText id="Moneda" 	title="Moneda" 				visible="false" position="29" domain="Character,20"/>
+			<UIButton id="btnComexM12" position="30" source="[APP]resources/project/LloydsUru/img/lupa.png" title="Detalle" width="90" height="36" visible="false"/>
+			<UIButton id="btnComexM2" position="31" source="[APP]resources/project/LloydsUru/img/lupa.png" title="Detalle" width="90" height="36" visible="false"/>
+			<UIButton id="btnComexM3" position="32" source="[APP]resources/project/LloydsUru/img/lupa.png" title="Detalle" width="90" height="36" visible="false"/>
+			<UIButton id="btnComexM13" position="33" source="[APP]resources/project/LloydsUru/img/lupa.png" title="Detalle" width="90" height="36" visible="false"/>
+			<UIButton id="btnMov" position="34" source="[APP]resources/project/LloydsUru/img/lupa.png" title="Detalle" width="90" height="36" visible="false"/>
+			<UIButton id="btnOper" position="35" source="[APP]resources/project/LloydsUru/img/lupa.png" title="Detalle" width="90" height="36" visible="false"/>
+			<UIButton id="btnCustPor" position="36" source="[APP]resources/project/LloydsUru/img/lupa.png" title="Detalle" width="90" height="36" visible="false"/>
+			<UIButton id="btnValPorAcred" position="37" source="[APP]resources/project/LloydsUru/img/lupa.png" title="Detalle" width="90" height="36" visible="false"/>
+			<UIButton id="btnDetEx" position="38" title="Ver" source="[APP]resources/project/LloydsUru/img/lupa.png" width="90" height="36"/>
+		</UIColumns>
+	</UIGrid>	
+	<UIOperation id="btnDetailEx" component="btnDetEx"  event="onclick" scope="Server" iblevel="3" ibprocess="ExportCollections" ibtask="Start" inputsds="Filters,CboAccounts,CboCurrency,GridSecondLevel:selected" outputsds="" type="GridLine" callForm="ExportCollections"/>
+	<UIOperation component="Filter" event="onclick" id="OpView" iblevel="3" ibprocess="ExportCollectionsSelection" ibtask="Filter" inputsds="Filters,CboAccounts,CboCurrency" outputsds="Filters,CboAccounts,CboCurrency,GridSecondLevel"></UIOperation>	
+</UIForm>
